@@ -1,0 +1,26 @@
+
+
+<table class="mat-elevation-z8 demo-table">
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Categoria</th>
+      <th>Gasto(Moneda Local)</th>
+      <th>Gasto(USD)</th>
+      <th>Acción</th>
+    </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let item of categorias ; index as i">
+
+    <td>{{i+1}}</td>
+    <td>{{item.name}}</td>
+     <td>
+      <button mat-raised-button  class="demo-button">
+        Ver data
+      </button>
+    </td>
+  </tr>
+</tbody>
+ 
+</table>

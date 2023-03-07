@@ -1,0 +1,19 @@
+<div class="container">
+  <mat-grid-list cols="1" rowHeight="600px">
+         
+  <mat-grid-tile>
+            <form [formGroup]="form" (ngSubmit)="addCategoria()">
+              <mat-form-field color="primary" appearance="outline">
+              <mat-label>Nombre de la Categoría</mat-label>
+                  <input matInput type="text" formControlName="name">
+              </mat-form-field>
+                <br>
+                <br>
+             
+                <button mat-fab type="submit" mat-button color="primary">Crear</button>
+      </form>
+  </mat-grid-tile>
+</mat-grid-list>
+
+
+</div>

@@ -1,0 +1,17 @@
+.container{
+    background-color: rgba(84, 85, 85, 0.7);
+    text-align: center;
+    align-content: center;
+}
+
+h2{
+    padding-top: 20px;
+    color: white;
+    font-size: 24px;
+}
+
+
+mat-grid-tile{
+    border-left: 1px solid rgb(125, 123, 123);
+}
+

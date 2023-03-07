@@ -1,0 +1,36 @@
+.mat-toolbar {
+    background-color: #2196f3;
+    color: #fff;
+  }
+  
+  .mat-toolbar-row {
+    display: flex;
+    align-items: center;
+  }
+  
+  .mat-toolbar-logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+  }
+  
+  .mat-toolbar-logo img {
+    height: 40px;
+    margin-right: 8px;
+  }
+  
+  .mat-toolbar-spacer {
+    flex: 1;
+  }
+  
+  .mat-button {
+    color: white;
+    
+    
+    
+  }
+  
+  .mat-button.active {
+    background-color: rgba(106, 7, 254, 0.5);
+  }
+  
