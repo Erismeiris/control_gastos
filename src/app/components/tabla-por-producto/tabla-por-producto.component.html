@@ -1,33 +1,64 @@
-<table class="mat-elevation-z8 demo-table">
-    <thead>
-      <tr>
-        <th>No</th>
-        <th>Producto</th>
-        <th>Categoría</th>
-        <th>Monto</th>
-        <th>Gasto en dólares</th>
-        <th>Fecha</th>
-        <th>Acción</th>
+<div class="example-container mat-elevation-z8">
+ <div clas="row">
+  <div class="col">
+    <form [formGroup]="datePicker" (ngSubmit)=getGastos()>
+    <mat-form-field appearance="fill">
+      <mat-label>Selecciona el rango de fecha</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate formControlName="startDate" placeholder="Fecha Inicio">
+        <input matEndDate formControlName="endDate" placeholder="Fecha Final">
+      </mat-date-range-input>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary" class="demo-button">
+      Buscar
+    </button>
+
+  </form>
+  </div>
+ </div>  
+
+  <div class="example-table-container">
+    <table class="mat-elevation-z8 demo-table">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Producto</th>
+          <th>Categoría</th>
+          <th>Monto</th>
+          <th>Gasto en dólares</th>
+          <th>Fecha</th>
+          <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of gastos ; index as i">
+    
+        <td>{{i+1}}</td>
+        <td>{{item.producto}}</td>
+        <td>{{item.categoria}}</td>
+        <td>{{item.monto}}</td>
+        <td>{{item.monto/item.tasa_de_cambio | number : '1.2-2'}}  </td>
+        <td>{{item.date | date}}</td>
+        <td>
+          <button mat-raised-button color="warn" class="demo-button" (click)="deleteGasto(item)">
+            Eliminar
+          </button>
+          <button mat-raised-button color="primary" class="demo-button">
+            Editar
+          </button>
+        </td>
       </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of gastos ; index as i">
+    </tbody>
+    
+  </table> 
+    
+  </div>
   
-      <td>{{i+1}}</td>
-      <td>{{item.producto}}</td>
-      <td>{{item.categoria}}</td>
-      <td>{{item.monto}}</td>
-      <td>{{item.monto/item.tasa_de_cambio | number : '1.2-2'}}  </td>
-      <td>{{item.date}}</td>
-      <td>
-        <button mat-raised-button color="warn" class="demo-button">
-          Eliminar
-        </button>
-        <button mat-raised-button color="primary" class="demo-button">
-          Editar
-        </button>
-      </td>
-    </tr>
-  </tbody>
-   
-  </table>
+</div>
+
+
+
+
+<!-- -->

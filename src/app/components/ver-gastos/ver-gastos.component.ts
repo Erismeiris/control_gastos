@@ -49,11 +49,11 @@ this.getGastos();
 getGastos(){
   this.gastoServices.getGastos().subscribe( resp => {
     this.anualTotalLocal = resp.map(item => item.monto).reduce((a, b) => a + b, 0);
-    this.anualTotalUsd = resp.map(item => (item.monto/item.tasa_de_cambio)).reduce( (a,b)=> a+b , 0)
-      
-    
+    this.anualTotalUsd = resp.map(item => (item.monto/item.tasa_de_cambio)).reduce( (a,b)=> a+b , 0)   
  
   })
 }
+
+
 
 }

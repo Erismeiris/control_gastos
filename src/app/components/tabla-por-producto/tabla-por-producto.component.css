@@ -5,10 +5,38 @@
 }
 
 .demo-table{
-    text-align: left;
+    text-align: center;
     
 }
 
 td{
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid white;
+    padding: 0.5px;
+
 }
+
+th{
+  min-width: 100px;
+  border-bottom: solid 1px white;
+  font-weight: bold;
+  text-align: center;
+  
+}
+/* Structure */
+
+  
+  .example-table-container {
+    position: relative;
+    min-height: 200px;
+    max-height: 400px;
+    overflow: auto;
+  }
+  
+  table {
+    width: 100%;
+    
+  }
+  
+  
+  
+  

@@ -47,7 +47,7 @@ saveDetails(form: any) {
 
 async addgastos(){
  const resp = await this.gastosServices.addGastos(this.form.value)
- 
+ alert('El gasto ha sido creado');
  this.form.reset()
 }
 

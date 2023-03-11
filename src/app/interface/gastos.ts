@@ -1,7 +1,7 @@
 export interface Gastos {
-    id?:string,
+    id:string,
     categoria: string,
-    date:Date,
+    date:string,
     descripcion:string,
     monto:number,
     producto:string,

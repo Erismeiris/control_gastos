@@ -19,6 +19,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatRadioModule } from '@angular/material/radio';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 
 
@@ -39,6 +41,8 @@ import { environment } from 'src/environments/environment';
 import { TablaPorProductoComponent } from './components/tabla-por-producto/tabla-por-producto.component';
 import { NewCategoriaComponent } from './components/newCategoria/newCategoria.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -58,6 +62,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+
+
     MatDialogModule,
     MatGridListModule,
     MatToolbarModule,
@@ -73,6 +80,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatTableModule,
     MatRadioModule,
     ReactiveFormsModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     

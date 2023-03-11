@@ -1,6 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 
-import { collectionData, Firestore, collection,addDoc } from '@angular/fire/firestore';
+import { collectionData, Firestore, collection,addDoc, deleteDoc, doc } from '@angular/fire/firestore';
+
 
 import { Observable } from 'rxjs';
 import { Gastos } from '../interface/gastos';
@@ -11,6 +12,8 @@ import { Gastos } from '../interface/gastos';
   providedIn: 'root'
 })
 export class GastosService implements OnInit {
+
+
 
   constructor( private firestore: Firestore ) { }
 
@@ -28,6 +31,12 @@ addGastos(gastos: Gastos){
 getGastos():Observable<Gastos[]>{
   const newGastos = collection(this.firestore, 'gastos');
   return collectionData(newGastos, {idField:'id'}) as Observable<Gastos[]>
+
+}
+
+deleteGastos(gasto:Gastos){
+  const gastosRef = doc(this.firestore, `gastos/${gasto.id}`)
+  return deleteDoc(gastosRef);
 
 }
 
