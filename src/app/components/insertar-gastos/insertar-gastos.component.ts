@@ -26,7 +26,7 @@ export class InsertarGastosComponent implements OnInit {
               private categoriaServices: CategoriaService,
               public dialog: MatDialog){
     this.form = this.fb.group({
-      categoria: [null, [Validators.required, Validators.minLength(10)]],
+      categoria: [null, [Validators.required, Validators.minLength(3)]],
       producto: [null, [Validators.required, ]],
       monto: [null, [Validators.required]],
       descripcion: [null],
@@ -53,7 +53,7 @@ async addgastos(){
 
 getCategorias(){
   this.categoriaServices.getCategoria().subscribe( resp => {
-    this.categorias = resp
+    this.categorias = resp.sort((a, b) => (a.name > b.name) ? 1 : -1)
     
   }) 
 }

@@ -43,10 +43,13 @@
         <td>{{item.date | date}}</td>
         <td>
           <button mat-raised-button color="warn" class="demo-button" (click)="deleteGasto(item)">
-            Eliminar
+            <mat-icon>delete</mat-icon>
           </button>
-          <button mat-raised-button color="primary" class="demo-button">
-            Editar
+          <button mat-raised-button color="primary" class="demo-button" 
+          (click)="openDialog('1500ms', '1500ms', item) "
+          >
+          <mat-icon>edit</mat-icon>
+            
           </button>
         </td>
       </tr>

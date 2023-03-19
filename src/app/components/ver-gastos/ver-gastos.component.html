@@ -1,22 +1,29 @@
-
 <mat-grid-list cols="8" rowHeight="100px">
-    <mat-grid-tile> Gasto Anual (ZAR): <br>
-         {{anualTotalLocal | number: '1.2-2' }} </mat-grid-tile>
-    <mat-grid-tile> Gasto Mensual (ZAR): <br>
-         {{mensualLocal}} </mat-grid-tile>
-    <mat-grid-tile> Promedio Mensual (ZAR): <br>
-        {{promedioMensualLocal}} </mat-grid-tile>
-    <mat-grid-tile> Gasto Anual (USD): <br>
-         {{anualTotalUsd | number:'1.2-2'}} </mat-grid-tile>
-    <mat-grid-tile> Gasto Mensual (USD): <br>
-         {{mensualUsd}} </mat-grid-tile>
-    <mat-grid-tile> Promedio Mensual (USD): <br>
-        {{promedioMensualUsd}} </mat-grid-tile>
-    <mat-grid-tile> Tendencia: <br>
-         {{tendencia}} </mat-grid-tile>
-    <mat-grid-tile> 
-    <button mat-button color="primary">Insertar gastos</button>
-</mat-grid-tile>
+     <mat-grid-tile> Gasto Anual (ZAR): <br>
+          {{anualTotalLocal | number: '1.2-2' }}
+     </mat-grid-tile>
+     <mat-grid-tile> Gasto Mensual (ZAR): <br>
+          {{mensualLocal | number: '1.2-2'}}
+     </mat-grid-tile>
+     <mat-grid-tile> Promedio Mensual (ZAR): <br>
+          {{promedioMensualLocal | number: '1.2-2'}}
+     </mat-grid-tile>
+     <mat-grid-tile> Gasto Anual (USD): <br>
+          {{anualTotalUsd | number:'1.2-2'}}
+     </mat-grid-tile>
+     <mat-grid-tile> Gasto Mensual (USD): <br>
+          {{mensualUsd | number: '1.2-2'}}
+     </mat-grid-tile>
+     <mat-grid-tile> Promedio Mensual (USD): <br>
+          {{promedioMensualUsd | number:'1.2-2'}}
+     </mat-grid-tile>
+     <mat-grid-tile>
+          <a mat-button color="primary" routerLink="/gastos-por-categoria">Gastos por categorías</a>
+          
+     </mat-grid-tile>
+     <mat-grid-tile>
+          <a mat-button color="primary" routerLink="/gastos-por-meses" >Gastos por meses</a>
+     </mat-grid-tile>
 </mat-grid-list>
 
 <app-insertar-gastos></app-insertar-gastos>

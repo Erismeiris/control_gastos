@@ -40,7 +40,7 @@
 
                       <br>
 
-                  <button mat-fab type="submit" mat-button color="primary">Guardar</button>
+                  <button mat-fab type="submit" [disabled]="form.invalid" mat-button color="primary">Guardar</button>
         </form>
     </mat-grid-tile>
 

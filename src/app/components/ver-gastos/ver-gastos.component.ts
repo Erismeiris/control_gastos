@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { GastosService } from 'src/app/services/gastos.service';
 
+export interface GastoMensual {
+  mes: string;
+  monto: number;
+}
+
 @Component({
   selector: 'app-ver-gastos',
   templateUrl: './ver-gastos.component.html',
@@ -46,10 +51,35 @@ this.getGastos();
  
 }
 
+ // Get the current month
+ getMonth(){
+  const date = new Date()
+  const month = date.getMonth() + 1
+  const year = date.getFullYear()
+ return `${year}-${month}`
+
+}
+
+//get the last day of the month
+getLastDayOfMonth(){
+  const date = new Date()
+  const month = date.getMonth() + 1
+  const year = date.getFullYear()
+  return new Date(year, month, 0).getDate()
+}
+
 getGastos(){
   this.gastoServices.getGastos().subscribe( resp => {
     this.anualTotalLocal = resp.map(item => item.monto).reduce((a, b) => a + b, 0);
-    this.anualTotalUsd = resp.map(item => (item.monto/item.tasa_de_cambio)).reduce( (a,b)=> a+b , 0)   
+    this.anualTotalUsd = resp.map(item => (item.monto/item.tasa_de_cambio)).reduce( (a,b)=> a+b , 0) 
+    this.mensualLocal = resp.filter(item => new Date(item.date).getMonth() == new Date().getMonth()).map(item => item.monto).reduce((a, b) => a + b, 0);
+    this.mensualUsd = resp.filter(item => new Date(item.date).getMonth() == new Date().getMonth()).map(item => item.monto / item.tasa_de_cambio).reduce((a, b) => a + b, 0);
+    //count the number of months
+    let months = resp.map(item =>new Date(item.date).getMonth())
+    let uniqueMonths = [...new Set(months)]
+    let numberOfMonths = uniqueMonths.length
+    this.promedioMensualLocal = this.anualTotalLocal/numberOfMonths
+    this.promedioMensualUsd   = this.anualTotalUsd/numberOfMonths
  
   })
 }

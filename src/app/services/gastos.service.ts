@@ -1,6 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 
-import { collectionData, Firestore, collection,addDoc, deleteDoc, doc } from '@angular/fire/firestore';
+
+import { collectionData, Firestore, collection,addDoc, deleteDoc, doc, updateDoc } from '@angular/fire/firestore';
 
 
 import { Observable } from 'rxjs';
@@ -34,10 +35,17 @@ getGastos():Observable<Gastos[]>{
 
 }
 
+
 deleteGastos(gasto:Gastos){
   const gastosRef = doc(this.firestore, `gastos/${gasto.id}`)
   return deleteDoc(gastosRef);
 
+}
+
+//Update gastos using firestore
+updateData(documentId: string, newData: any): Promise<void> {
+  const gastosRef = doc(this.firestore, `gastos/${documentId}`)
+  return updateDoc(gastosRef, newData)
 }
 
 }

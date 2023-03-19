@@ -20,6 +20,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatRadioModule } from '@angular/material/radio';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -40,9 +42,13 @@ import { TablaPorCategoriasComponent } from './components/tabla-por-categorias/t
 import { environment } from 'src/environments/environment';
 import { TablaPorProductoComponent } from './components/tabla-por-producto/tabla-por-producto.component';
 import { NewCategoriaComponent } from './components/newCategoria/newCategoria.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import {MatPaginatorModule} from '@angular/material/paginator';
 import { HttpClientModule } from '@angular/common/http';
+import { GastoPorMesesComponent } from './components/gasto-por-meses/gasto-por-meses.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { GastosPorCategoriaComponent } from './components/gastos-por-categoria/gastos-por-categoria.component';
+import { EditarGastosComponent } from './components/editarGastos/editarGastos.component';
+
+
 
 
 @NgModule({
@@ -56,13 +62,19 @@ import { HttpClientModule } from '@angular/common/http';
     VerGastosComponent,
     TablaPorCategoriasComponent,
     TablaPorProductoComponent,
-    NewCategoriaComponent
+    NewCategoriaComponent,
+    GastoPorMesesComponent,
+    GastosPorCategoriaComponent,
+    EditarGastosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+
+    NgxChartsModule,
+    BrowserAnimationsModule,
 
 
     MatDialogModule,
