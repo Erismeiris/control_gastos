@@ -1,0 +1,24 @@
+<div class="caja">
+  <mat-grid-list cols="1" rowHeight="600px" class="width">
+         
+  <mat-grid-tile>
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" />
+      <mat-error *ngIf="loginForm.controls['email'].hasError('required')">El email es requerido</mat-error>
+      <mat-error *ngIf="loginForm.controls['email'].hasError('email')">El email no es válido</mat-error>
+    </mat-form-field>
+  <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Contraseña</mat-label>
+      <input matInput type="password" formControlName="password" />
+      <mat-error *ngIf="loginForm.controls['password'].hasError('required')">La contraseña es requerida</mat-error>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Ingresar</button>
+  </form>
+  </mat-grid-tile>
+  </mat-grid-list>
+</div>
+  

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import {provideAuth, getAuth} from '@angular/fire/auth'
 
 
 
@@ -22,6 +23,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -47,12 +49,15 @@ import { GastoPorMesesComponent } from './components/gasto-por-meses/gasto-por-m
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { GastosPorCategoriaComponent } from './components/gastos-por-categoria/gastos-por-categoria.component';
 import { EditarGastosComponent } from './components/editarGastos/editarGastos.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { AuthService } from './services/auth.service';
 
 
 
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     HeaderComponent,
     FooterComponent,
@@ -65,8 +70,10 @@ import { EditarGastosComponent } from './components/editarGastos/editarGastos.co
     NewCategoriaComponent,
     GastoPorMesesComponent,
     GastosPorCategoriaComponent,
-    EditarGastosComponent
-  ],
+    EditarGastosComponent,
+      LoginComponent,
+      RegisterComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -94,14 +101,16 @@ import { EditarGastosComponent } from './components/editarGastos/editarGastos.co
     ReactiveFormsModule,
     MatPaginatorModule,
     MatProgressSpinnerModule,
+    MatSnackBarModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
+    provideAuth( ()=> getAuth())
     
         
     
 
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
