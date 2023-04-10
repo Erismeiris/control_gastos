@@ -1,4 +1,11 @@
 .caja{
-    background-color: rgb(58, 57, 57);
+    background-color: rgb(61, 60, 60);
 
+}
+
+.tile{
+    top: 0;
+    width: 10px;
+    color: white;
+    text-align: top;
 }

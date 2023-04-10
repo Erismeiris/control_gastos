@@ -52,6 +52,7 @@ import { EditarGastosComponent } from './components/editarGastos/editarGastos.co
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { AuthService } from './services/auth.service';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 
@@ -72,7 +73,8 @@ import { AuthService } from './services/auth.service';
     GastosPorCategoriaComponent,
     EditarGastosComponent,
       LoginComponent,
-      RegisterComponent
+      RegisterComponent,
+      ProfileComponent
    ],
   imports: [
     BrowserModule,

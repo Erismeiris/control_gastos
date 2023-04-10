@@ -15,13 +15,14 @@ export class LoginComponent {
     password: new FormControl('', [Validators.required]),
   });
 
+  public user: any = {};
+
   constructor(private snackBar: MatSnackBar, private auth:AuthService, private router:Router) {}
 
   login() {
     if (this.loginForm.valid) {
       // Lógica de inicio de sesión aquí
       this.auth.login(this.loginForm.value).then((res)=>{
-        console.log(res);
         this.router.navigate(['/seguimiento-gastos']);
       }).catch((err)=>{
         console.log(err);

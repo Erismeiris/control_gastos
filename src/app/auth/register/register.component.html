@@ -1,5 +1,5 @@
 <div class="caja">
-    <mat-grid-list cols="1" rowHeight="600px" class="width">
+    <mat-grid-list cols="1" rowHeight="20vw">
            
     <mat-grid-tile>
 <form [formGroup]="registerForm" (ngSubmit)="register()">
@@ -26,7 +26,9 @@
     <br>
     <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Registrarse</button>
   </form>
-
+    </mat-grid-tile>
+    <mat-grid-tile class="tile">
+      <p>¿Ya tienes una cuenta? <a mat-raised-button color="primary" routerLink="/login">Login</a></p>
     </mat-grid-tile>
     </mat-grid-list>
 </div>

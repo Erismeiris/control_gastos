@@ -1,4 +1,4 @@
-<mat-grid-list cols="8" rowHeight="100px">
+<mat-grid-list cols="9" rowHeight="100px">
      <mat-grid-tile> Gasto Anual (ZAR): <br>
           {{anualTotalLocal | number: '1.2-2' }}
      </mat-grid-tile>
@@ -19,10 +19,15 @@
      </mat-grid-tile>
      <mat-grid-tile>
           <a mat-button color="primary" routerLink="/gastos-por-categoria">Gastos por categorías</a>
-          
+
      </mat-grid-tile>
      <mat-grid-tile>
-          <a mat-button color="primary" routerLink="/gastos-por-meses" >Gastos por meses</a>
+          <a mat-button color="primary" routerLink="/gastos-por-meses">Gastos por meses</a>
+     </mat-grid-tile>
+     <mat-grid-tile>
+          <!--  <h3>{{user.email}}</h3> -->
+          
+          <h3 class="gmail">erismeidis@gmail.com <a mat-button color="primary" routerLink="/profile">Editar Perfil</a></h3>
      </mat-grid-tile>
 </mat-grid-list>
 

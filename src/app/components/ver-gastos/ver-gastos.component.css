@@ -15,3 +15,8 @@ mat-grid-tile{
     border-left: 1px solid rgb(125, 123, 123);
 }
 
+.gmail{
+    color: rgb(22, 21, 21);
+    font-size: 14px;
+    padding-top: 10px;
+}

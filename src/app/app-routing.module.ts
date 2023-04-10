@@ -8,6 +8,7 @@ import { GastosPorCategoriaComponent } from './components/gastos-por-categoria/g
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { canActivate, redirectUnauthorizedTo} from '@angular/fire/auth-guard'
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
   {path:"center", component:CenterComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:'politicas', component: PoliticasDePrivacidadComponent},
   {path:'seguimiento-gastos', component: VerGastosComponent,
    ...canActivate (()=>redirectUnauthorizedTo(['login']))},
+  {path:'profile', component: ProfileComponent, ...canActivate (()=>redirectUnauthorizedTo(['login']))},
   {path:'gastos-por-meses', component: GastoPorMesesComponent},
   {path:'gastos-por-categoria', component: GastosPorCategoriaComponent},
   {path:'login', component:LoginComponent},

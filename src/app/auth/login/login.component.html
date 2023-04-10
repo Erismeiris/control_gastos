@@ -1,7 +1,7 @@
 <div class="caja">
-  <mat-grid-list cols="1" rowHeight="600px" class="width">
+  <mat-grid-list cols="1" rowHeight="20vw" >
          
-  <mat-grid-tile>
+  <mat-grid-tile >
 <form [formGroup]="loginForm" (ngSubmit)="login()">
     <mat-form-field appearance="fill">
       <mat-label>Email</mat-label>
@@ -18,7 +18,11 @@
     <br>
     <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Ingresar</button>
   </form>
-  </mat-grid-tile>
+  <br>
+</mat-grid-tile>
+<mat-grid-tile class="tile">
+  <p>¿No tienes cuenta? <a mat-raised-button color="primary" routerLink="/register">Registrate</a></p>
+</mat-grid-tile>
   </mat-grid-list>
 </div>
   
