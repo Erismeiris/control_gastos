@@ -4,48 +4,41 @@
   <mat-grid-list cols="1" rowHeight="40vw" >
          
   <mat-grid-tile >
-<form [formGroup]="profileditor" (ngSubmit)="saveProfile()">
-    <mat-form-field appearance="fill">
+<form [formGroup]="profileditor" (ngSubmit)="saveOrUpdateProfile()">
+    <mat-form-field appearance="fill" >
       <mat-label>Email</mat-label>
-      <input matInput formControlName="email"/>
+      <input type="email" matInput  formControlName="email"/>
       <mat-error *ngIf="profileditor.controls['email'].hasError('required')">El email es requerido</mat-error>
       <mat-error *ngIf="profileditor.controls['email'].hasError('email')">El email no es válido</mat-error>
     </mat-form-field>
   <br>
   <mat-form-field appearance="fill">
     <mat-label>Nombre</mat-label>
-    <input matInput formControlName="displayName"/>
-    <mat-error *ngIf="profileditor.controls['displayName'].hasError('required')">El nombre es requerido</mat-error>
+    <input type="name" matInput formControlName="name"/>
+    <mat-error *ngIf="profileditor.controls['name'].hasError('required')">El nombre es requerido</mat-error>
   </mat-form-field>
   <br>
   <mat-form-field appearance="fill">
     <mat-label>pais</mat-label>
-    <input matInput formControlName="country"/>
+    <input type="text" matInput  formControlName="country"/>
     <mat-error *ngIf="profileditor.controls['country'].hasError('required')">El pais es requerido</mat-error>
   </mat-form-field>
 
   <br>
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="outline">
     <mat-label>tipoMoneda</mat-label>
-    <input matInput formControlName="currency"/>
+    <input type="text" matInput  formControlName="currency"/>
     <mat-error *ngIf="profileditor.controls['currency'].hasError('required')">El tipo de moneda es requerido</mat-error>
   </mat-form-field>
 
   <br>
-  <mat-form-field appearance="fill">
-    <mat-label>Subir foto</mat-label>
-    <input matInput formControlName="photoURL"/>
-    <mat-error *ngIf="profileditor.controls['photoURL'].hasError('required')">La foto es requerida</mat-error>  
-  </mat-form-field>
-   
+    
     <br>
-    <button mat-raised-button color="primary" type="submit" [disabled]="profileditor.invalid">Guardar Perfil</button>
+    <button mat-raised-button color="primary" [disabled]="profileditor.invalid">Guardar Perfil</button>
   </form>
   <br>
 </mat-grid-tile>
-<mat-grid-tile class="tile">
-  <p>¿No tienes cuenta? <a mat-raised-button color="primary" routerLink="/register">Registrate</a></p>
-</mat-grid-tile>
+
   </mat-grid-list>
 </div>
 

@@ -23,6 +23,7 @@ login( {email, password}:any){
 
 //Update user profile
 
+
 //Logout
 
 logout(){
@@ -34,6 +35,8 @@ getUserLogedd(){
     return  this.auth.currentUser
     
 }
+
+
 
 
 
